@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Native Html</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="section1">
+        <div>
+          <h2 class="greeting">Hi Samantha</h2>
+          <p class="welcome">Welcome back to the workspace, we missed You!</p>
+          <div>
+            <input
+              id="searchTask"
+              type="text"
+              class="input-search"
+              placeholder="Search Task or Project ..."
+            />
+          </div>
+        </div>
+        <div class="project-container">
+          <div class="project-title">Projects <span>(13)</span></div>
+          <div class="box-project">GH</div>
+          <div class="description-project">Green House</div>
+        </div>
+      </div>
+      <div class="section2">
+        <div class="add-task" onclick="addTask()">
+          <img src="/assets/plus.svg" alt="plus" />
+        </div>
+        <div>
+          <div class="title-main">Cyber Punk</div>
+          <div class="description-main">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500
+          </div>
+        </div>
+        <div class="task-list-wrapper">
+          <div class="task-list-title-wrapper">
+            <div class="today">Today</div>
+            <div class="dot-wrapper">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="tasks-wrapper" id="tasks">
+            <div class="task-item">
+              <div style="display: flex; align-items: center">
+                <img
+                  alt="check"
+                  src="/assets/check.svg"
+                  width="30"
+                  height="30"
+                />
+                <div class="title-task">Create initial layout for homepage</div>
+              </div>
+              <div class="status-task">Approved</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const tasks = document.getElementById("tasks");
+      const words = ["Meeting", "Belajar", "Menyapu", "Bernyayi", "Manari"];
+      const word = words[Math.floor(Math.random() * words.length)];
+
+      const addTask = () => {
+        tasks.innerHTML += `
+          <div class="task-item">
+            <div style="display: flex; align-items: center">
+              <img
+                alt="check"
+                src="/assets/check.svg"
+                width="30"
+                height="30"
+              />
+              <div class="title-task">${word}</div>
+            </div>
+            <div class="status-task">Approved</div>
+          </div>
+        `;
+      };
+    </script>
+  </body>
+</html>
